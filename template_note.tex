@@ -1,0 +1,45 @@
+% !TeX program = xelatex
+\documentclass[
+	border={25mm 20mm 25mm 30mm},  % margin from left, down, right, up
+	varwidth,  % specify the textwidth, for example: varwidth=21cm
+]{standalone}
+\usepackage[heading]{ctex}  % 使用中文
+\usepackage[
+	colorlinks,  % colorful links
+	linkcolor=blue,  % blue link for contents
+]{hyperref}  % support jumping from content line
+% clear dots and pagenum from content line
+\usepackage{tocloft}
+\cftpagenumbersoff{section}
+\cftpagenumbersoff{subsection}
+\cftpagenumbersoff{subsubsection}
+\renewcommand{\cftdot}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% begin
+
+\title{标题}
+\author{作者}
+\date{\today}
+
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{amsmath}
+\begin{document}
+	\hspace*{\textwidth}  % fill the width, cooperate with varwidth option
+	
+	\maketitle
+	
+	\tableofcontents
+
+	\setlength{\parindent}{2em}  % first line of each paragraph indent 2 characters
+	\setcounter{section}{-1}  % begin with section 0, if necessary
+	
+	\section{前言}
+	
+	\section{第一章}
+	第一章的内容
+	
+	\section{第二章}
+	第二章的内容
+
+\end{document}
